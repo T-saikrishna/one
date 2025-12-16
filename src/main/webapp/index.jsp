@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,14 +11,13 @@
 
     <style>
         :root {
-            --bg: #ffffff;
-            --primary: #0a2540;
-            --accent: #00d4ff;
-            --muted: #7a7a7a;
+            --bg: #f8fafc;
+            --primary: #0f172a;
+            --accent: #6366f1;
+            --muted: #64748b;
             --card: #ffffff;
-            --surface: #f6f9fc;
-            --success: #28a745;
-            --radius: 12px;
+            --surface: #eef2ff;
+            --radius: 14px;
             --container: 1200px;
         }
 
@@ -40,11 +38,12 @@
             padding: 0 20px;
         }
 
+        /* Header */
         header {
             position: sticky;
             top: 0;
             background: white;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #e5e7eb;
             z-index: 10;
         }
 
@@ -52,12 +51,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 14px 0;
+            padding: 16px 0;
         }
 
         .brand {
             font-family: Poppins;
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
         }
 
@@ -65,18 +64,29 @@
 
         nav ul {
             display: flex;
-            gap: 14px;
+            gap: 18px;
             list-style: none;
             padding: 0;
             margin: 0;
+            font-weight: 500;
+        }
+
+        nav li {
+            cursor: pointer;
+            color: var(--muted);
+        }
+
+        nav li:hover {
+            color: var(--accent);
         }
 
         .search {
             background: var(--surface);
-            padding: 6px 12px;
+            padding: 8px 14px;
             border-radius: 999px;
             display: flex;
             gap: 8px;
+            align-items: center;
         }
 
         .search input {
@@ -85,65 +95,116 @@
             background: transparent;
         }
 
+        /* Hero */
         .hero {
             background:
-                linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
+                linear-gradient(rgba(15,23,42,.7), rgba(15,23,42,.7)),
                 url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1400&q=80')
                 center/cover no-repeat;
             color: white;
             text-align: center;
-            padding: 80px 20px;
+            padding: 100px 20px;
         }
 
+        .hero h1 {
+            font-family: Poppins;
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Grids */
         .grid {
             display: grid;
-            gap: 20px;
+            gap: 22px;
         }
 
-        .categories { grid-template-columns: repeat(auto-fit,minmax(150px,1fr)); }
+        .categories {
+            grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+            margin-top: 20px;
+        }
 
         .cat-card {
-            padding: 16px;
-            border-radius: 12px;
+            padding: 22px;
+            border-radius: var(--radius);
             background: white;
-            box-shadow: 0 6px 16px rgba(0,0,0,.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,.06);
             text-align: center;
             cursor: pointer;
+            transition: transform .3s, box-shadow .3s;
         }
 
-        .products { grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); }
+        .cat-card i {
+            font-size: 26px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .cat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,.1);
+        }
+
+        .products {
+            grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+            margin-top: 20px;
+        }
 
         .product {
-            position: relative;
             background: white;
-            border-radius: 12px;
+            border-radius: var(--radius);
             overflow: hidden;
-            box-shadow: 0 6px 16px rgba(0,0,0,.05);
+            box-shadow: 0 10px 25px rgba(0,0,0,.06);
+            transition: transform .3s;
+        }
+
+        .product:hover {
+            transform: translateY(-6px);
         }
 
         .product img {
             width: 100%;
-            height: 180px;
+            height: 190px;
             object-fit: cover;
         }
 
-        .product-body { padding: 12px }
+        .product-body {
+            padding: 14px;
+        }
+
+        .product-body h4 {
+            margin: 0 0 6px;
+        }
+
+        .product-body strong {
+            color: var(--accent);
+        }
 
         .add-btn {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             border: none;
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--accent), #4f46e5);
             color: white;
             cursor: pointer;
+            font-weight: 600;
+        }
+
+        .add-btn:hover {
+            opacity: .9;
         }
 
         footer {
-            border-top: 1px solid #eee;
-            padding: 24px 0;
-            margin-top: 40px;
+            border-top: 1px solid #e5e7eb;
+            padding: 28px 0;
+            margin-top: 50px;
             text-align: center;
             color: var(--muted);
+            background: white;
         }
     </style>
 </head>
@@ -164,7 +225,7 @@
         </nav>
 
         <div class="search">
-            <input type="search" id="searchInput" placeholder="Search products">
+            <input type="search" placeholder="Search products">
             <i class="fas fa-search"></i>
         </div>
     </div>
@@ -175,12 +236,12 @@
     <p>Latest gadgets, fashion & accessories</p>
 </section>
 
-<section class="container" style="padding:40px 0">
+<section class="container" style="padding:50px 0">
     <h2>Categories</h2>
     <div class="grid categories" id="categoriesGrid"></div>
 </section>
 
-<section class="container" style="padding-bottom:40px">
+<section class="container" style="padding-bottom:50px">
     <h2>Viral Products</h2>
     <div class="grid products" id="productsGrid"></div>
 </section>
