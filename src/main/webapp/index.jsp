@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>KrishnaShop — Modern E-Commerce</title>
+    <title>new_lookShop — Modern E-Commerce</title>
 
     <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -213,7 +213,7 @@
 
 <header>
     <div class="container header-inner">
-        <div class="brand">Krishna<span class="accent">Shop</span></div>
+        <div class="brand">new_look<span class="accent">Shop</span></div>
 
         <nav>
             <ul>
@@ -247,7 +247,7 @@
 </section>
 
 <footer>
-    © <span id="year"></span> KrishnaShop. All rights reserved.
+    © <span id="year"></span> new_lookShop. All rights reserved.
 </footer>
 
 <script>
