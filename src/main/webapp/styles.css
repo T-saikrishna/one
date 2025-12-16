@@ -1,27 +1,32 @@
-/* Root Variables */
+/* =====================
+   Global Theme Variables
+===================== */
 :root {
-  --primary: #ff6f61;
-  --primary-hover: #ff4a3d;
-  --dark: #333;
-  --light-bg: #fafafa;
-  --radius: 10px;
+  --primary: #6c63ff;
+  --secondary: #ff6f61;
+  --dark: #1f2933;
+  --light: #f5f7fa;
+  --text: #333;
+  --card-bg: #ffffff;
 }
 
-/* Global Reset & Base Styles */
-* {
-  box-sizing: border-box;
-}
-
+/* =====================
+   General Styles
+===================== */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--light-bg);
-  line-height: 1.6;
+  background: var(--light);
+  color: var(--text);
 }
 
 h1, h2, h3 {
   color: var(--dark);
+}
+
+section {
+  position: relative;
 }
 
 a {
@@ -29,33 +34,32 @@ a {
   color: inherit;
 }
 
-/* Buttons */
+/* =====================
+   Buttons
+===================== */
 .btn {
   display: inline-block;
-  padding: 10px 22px;
-  background-color: var(--primary);
+  padding: 12px 26px;
+  background: linear-gradient(135deg, var(--secondary), #ff9472);
   color: white;
-  border-radius: var(--radius);
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(255, 111, 97, 0.3);
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: var(--primary-hover);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(255, 111, 97, 0.45);
 }
 
-.btn:focus {
-  outline: 2px solid rgba(255, 111, 97, 0.4);
-}
-
-/* Hero Section */
+/* =====================
+   Hero Section
+===================== */
 .hero {
-  background:
-    linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url('https://via.placeholder.com/1920x1080');
-  background-size: cover;
-  background-position: center;
   height: 100vh;
+  background:
+    linear-gradient(rgba(31, 41, 51, 0.7), rgba(31, 41, 51, 0.7)),
+    url('https://via.placeholder.com/1920x1080') center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,43 +67,51 @@ a {
   color: white;
 }
 
+.hero-content {
+  max-width: 700px;
+}
+
 .hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 3.2rem;
+  margin-bottom: 12px;
+  color: #ffffff;
 }
 
 .hero-content p {
   font-size: 1.4rem;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  opacity: 0.9;
 }
 
-/* Services Section */
+/* =====================
+   Services Section
+===================== */
 .services {
-  padding: 50px 20px;
+  padding: 70px 20px;
+  background: white;
   text-align: center;
 }
 
 .service-cards {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .card {
-  flex: 1 1 280px;
-  max-width: 320px;
+  width: 30%;
   margin: 20px 0;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  border-radius: var(--radius);
+  background: var(--card-bg);
+  border-radius: 16px;
   overflow: hidden;
-  background: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .card img {
@@ -109,89 +121,100 @@ a {
 }
 
 .card h3 {
-  margin: 15px 0;
+  margin: 18px 0 10px;
 }
 
 .card p {
-  padding: 0 15px 15px;
+  padding: 0 20px 25px;
+  color: #666;
 }
 
-/* Gallery Section */
+/* =====================
+   Gallery Section
+===================== */
 .gallery {
-  padding: 50px 20px;
+  padding: 70px 20px;
+  background: linear-gradient(180deg, #f5f7fa, #ffffff);
   text-align: center;
 }
 
 .gallery-images {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  justify-content: space-around;
   flex-wrap: wrap;
+  margin-top: 30px;
 }
 
 .gallery-images img {
-  width: 100%;
-  max-width: 420px;
-  margin: 10px 0;
-  border-radius: var(--radius);
-  transition: transform 0.3s ease;
+  width: 45%;
+  margin: 12px 0;
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .gallery-images img:hover {
   transform: scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* Contact Section */
+/* =====================
+   Contact Section
+===================== */
 .contact {
-  padding: 50px 20px;
+  padding: 80px 20px;
+  background: var(--light);
   text-align: center;
 }
 
 #contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
 }
 
 #contact-form input,
 #contact-form textarea {
   width: 100%;
-  max-width: 600px;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 14px;
+  margin: 12px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
 }
 
 #contact-form button {
-  padding: 10px 24px;
-  background-color: var(--primary);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
-#contact-form button:hover {
-  background-color: var(--primary-hover);
-}
-
-/* Footer */
+/* =====================
+   Footer
+===================== */
 footer {
-  background-color: var(--dark);
+  background: linear-gradient(135deg, var(--dark), #000);
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px;
+  font-size: 14px;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.2rem;
+/* =====================
+   Responsive
+===================== */
+@media (max-width: 900px) {
+  .card {
+    width: 80%;
   }
 
-  .hero-content p {
-    font-size: 1.1rem;
+  .gallery-images img {
+    width: 90%;
   }
 }
